@@ -105,4 +105,4 @@ public class Student {
         return "Student{" + "name=" + name + ", surnames=" + surnames + ", career=" + career + ", identification=" + identification + ", yearOfEntry=" + yearOfEntry + '}';
     }
     
-}//
+}// end class Student
