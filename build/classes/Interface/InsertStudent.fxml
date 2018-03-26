@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="755.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="UIControllers.InsertStudentController">
+   <children>
+      <TextField fx:id="tfd_studentName" layoutX="302.0" layoutY="303.0" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <TextField fx:id="tfd_studentSurnames" layoutX="302.0" layoutY="368.0" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-background-radius: 10;" />
+      <ComboBox fx:id="cbx_studentCareer" layoutX="302.0" layoutY="433.0" prefWidth="150.0" promptText="Escoja una carrera" style="-fx-border-color: #000000; -fx-border-radius: 10; -fx-background-color: #ffffff; -fx-background-radius: 10;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <TextField fx:id="tfd_studentYear" layoutX="302.0" layoutY="498.0" style="-fx-background-radius: 10; -fx-border-radius: 10; -fx-border-color: #000000;" />
+      <Button fx:id="btn_insertStudent" focusTraversable="false" layoutX="340.0" layoutY="542.0" mnemonicParsing="false" onAction="#insertingStudents" style="-fx-background-color: #7C4DFF; -fx-background-radius: 10;" text="Registrar" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <effect>
+            <DropShadow blurType="ONE_PASS_BOX" />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label layoutX="264.0" layoutY="229.0" text="Registrar estudiante">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="302.0" layoutY="278.0" text="Nombre">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="302.0" layoutY="473.0" text="Año de ingreso">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="302.0" layoutY="408.0" text="Carrera">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="302.0" layoutY="343.0" text="Apellidos">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
