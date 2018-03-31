@@ -5,8 +5,13 @@
  */
 package UIControllers;
 
+import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import domain.Student;
-import file.InsertStudent;
+import file.StudentFile;
+import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -14,8 +19,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
 
 /**
  * FXML Controller class
@@ -23,45 +27,71 @@ import javafx.scene.control.TextField;
  * @author Jesus
  */
 public class InsertStudentController implements Initializable {
+    
+    
     Student student;
-    InsertStudent inserting = new InsertStudent();
-    String id;
-    file.InsertStudent insert = new InsertStudent();
+    StudentFile insert = new StudentFile();
     ObservableList<String> careerList = FXCollections
             .observableArrayList("Agronomía", "Educación", "Informática");
     
     @FXML
-    private TextField tfd_studentYear;
+    private BorderPane borderpane_base;
 
     @FXML
-    private TextField tfd_studentName;
+    private JFXTextField tfd_studentYear;
 
     @FXML
-    private TextField tfd_studentSurnames;
+    private JFXTextField tfd_studentName;
 
     @FXML
-    private ComboBox<String> cbx_studentCareer;
+    private JFXTextField tfd_studentSurnames;
 
-//    @FXML
-//    private Button btn_insertStudent;
-
-
+    @FXML
+    private JFXComboBox<String> cbx_studentCareer;
+    
+    @FXML
+    private JFXButton btn_addStudent;
+    
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        cbx_studentCareer.setValue("Escoja una carrera");
         cbx_studentCareer.setItems(careerList);
     }
-    
+
     @FXML
-    private void insertingStudents(ActionEvent event){
+    private void insertingStudents(ActionEvent event) throws IOException {
         String name = tfd_studentName.getText();
         String surnames = tfd_studentSurnames.getText();
         String career = cbx_studentCareer.getValue();
-        int year = Integer.parseInt(tfd_studentYear.getText());
-        id = inserting.generateID(career, year);
-        student = new Student(name, surnames, career, id, year);
-    } 
+        if (name.isEmpty() || surnames.isEmpty()) {
+            System.out.println("No deje campos sin llenar");
+            return;
+            
+        }
+        int year;
+        try {
+            year = Integer.parseInt(tfd_studentYear.getText());
+        } catch (NumberFormatException nfe) {
+            System.out.println("Escriba un año válido");
+            return;
+        }
+        String id;
+        id = insert.generateID(career, year);
+
+        try {
+            insert.studentFile(new File("students.dat"));
+            System.out.println("Se le ha asignado el carnet: " + id);
+            insert.insertStudent(new Student(name, surnames, career, id, year));
+            insert.close();
+        } catch (IOException ioe) {
+            System.out.println("Ocurrió  un problema al añadir el estudiante.");
+        }
+        tfd_studentName.clear();
+        tfd_studentSurnames.clear();
+        tfd_studentYear.clear();
+        cbx_studentCareer.setPromptText("Carrera");
+        tfd_studentName.requestFocus();
+    }
 }

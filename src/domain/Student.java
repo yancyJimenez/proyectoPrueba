@@ -5,11 +5,13 @@
  */
 package domain;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Jesus
  */
-public class Student {
+public class Student implements Serializable{
     private String name, surnames, career, identification;
 
     private int yearOfEntry;
@@ -194,6 +196,16 @@ public class Student {
 
         return "Student{" + "name=" + name + ", surnames=" + surnames + ", career=" + career + ", identification=" + identification + ", yearOfEntry=" + yearOfEntry + '}';
 
+    }
+    
+    public int sizeInBytes(){
+        //int: necesita un byte
+        //String: necesita 2 bytes de espacio.
+        return this.getName().length() * 2 + 2 +
+                this.getSurnames().length() * 2 + 2 +
+                this.getCareer().length() * 2 + 2 +
+                this.getIdentification().length() * 2 + 2 +
+                4;
     }
 
     

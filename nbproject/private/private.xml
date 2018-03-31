@@ -3,16 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/src/Interface/Home.fxml</file>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/src/Interface/insertMaterial.fxml</file>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/src/domain/Student.java</file>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/src/UIControllers/InsertMaterialController.java</file>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/test/Test.java</file>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/src/bibliotech/Bibliotech.java</file>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/src/UIControllers/InsertStudentController.java</file>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/src/file/InsertStudent.java</file>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/src/UIControllers/HomeController.java</file>
-            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech/src/Interface/InsertStudent.fxml</file>
+            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech%20MD/src/bibliotech/Bibliotech.java</file>
+            <file>file:/C:/Users/Jesus/OneDrive/Documentos/NetBeansProjects/Bibliotech%20MD/src/UIControllers/NewLoanController.java</file>
         </group>
     </open-files>
 </project-private>
